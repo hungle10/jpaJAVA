@@ -92,6 +92,28 @@
 			<artifactId>jakarta.validation-api</artifactId>
 			<version>3.1.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.34</version>
+			<scope>provided</scope>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.hibernate/hibernate-jpamodelgen-jakarta -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-jpamodelgen-jakarta</artifactId>
+			<version>5.6.15.Final</version>
+			<scope>provided</scope>
+		</dependency>
+				<!-- ... sitemesh-->
+		<dependency>
+			<groupId>org.sitemesh</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+
 
 	</dependencies>
 	<build>

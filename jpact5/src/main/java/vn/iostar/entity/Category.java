@@ -10,8 +10,16 @@ import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Builder
 @Entity
 @Table(name="categories")
 @NamedQuery(name="Category.findAll", query="SELECT c FROM Category c")
@@ -30,53 +38,24 @@ public class Category implements Serializable {
 	@Column(name="Categoryname",columnDefinition="nvarchar(500) NULL")
 	private String categoryname;
 	
+	 @Column(name = "Images")
+	 private String images;
+	
 	@Column(name="Status")
 	private int status;
 	
 	
 	
 	//Declare relationship
+	@ToString.Exclude
 	@OneToMany(mappedBy="category")
 	private List<Video> videos;
 
 
-
-	public int getCategoryId() {
-		return categoryId;
-	}
-
-	public void setCategoryId(int categoryId) {
-		this.categoryId = categoryId;
-	}
-
-
-	public int getStatus() {
-		return status;
-	}
-
-	public void setStatus(int status) {
-		this.status = status;
-	}
-
-	public List<Video> getVideos() {
-		return videos;
-	}
-
-	public void setVideos(List<Video> videos) {
-		this.videos = videos;
-	}
 	
 
-	public String getCategoryname() {
-		return categoryname;
-	}
-
-	public void setCategoryname(String categoryname) {
-		this.categoryname = categoryname;
-	}
-
 	public Video addVideo(Video video) {
-		getVideos().add(video);
+		getVideos().add(video); 
 		video.setCategory(this);
 		return video;
 	}
