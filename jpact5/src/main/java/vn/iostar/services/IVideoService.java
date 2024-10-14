@@ -13,9 +13,9 @@ public interface IVideoService {
 
 	void update(Video video);
 
-	void delete(int videoId) throws Exception;
+	void delete(String videoId) throws Exception;
 
-	User findByUsername(String username);
+	Video findByVideoId(String videoid);
 
 	List<Video> findAll();
 

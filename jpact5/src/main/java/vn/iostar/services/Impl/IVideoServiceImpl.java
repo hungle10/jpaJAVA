@@ -31,12 +31,7 @@ public class IVideoServiceImpl implements IVideoService{
 	}
 
 	@Override
-	public User findByUsername(String username) {
-		return videodao.findByUsername(username);
-	}
-
-	@Override
-	public void delete(int videoId) throws Exception {
+	public void delete(String videoId) throws Exception {
 		videodao.delete(videoId);
 		
 	}
@@ -52,5 +47,15 @@ public class IVideoServiceImpl implements IVideoService{
 		videodao.insert(video);
 		
 	}
+
+	@Override
+	public Video findByVideoId(String videoid) {
+		Video video = videodao.findByVideoId(videoid);
+		return video;
+	}
+
+
+
+
 
 }

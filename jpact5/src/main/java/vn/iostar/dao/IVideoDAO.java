@@ -15,12 +15,13 @@ public interface IVideoDAO {
 
 	List<Video> findAll();
 
-	User findByUsername(String username);
+	Video findByVideoId(String videoid);
 
-	void delete(int videoId) throws Exception;
+	void delete(String videoId) throws Exception;
 
 	void update(Video video);
 
 	void insert(Video video);
+
 
 }

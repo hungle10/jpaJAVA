@@ -73,8 +73,8 @@
             </c:if>
             </td>
             <td>
-            <a href="<c:url value='/admin/category/edit?id=${cate.categoryId }'/>">Sua</a>
-            <a href="<c:url value='/admin/category/delete?id=${cate.categoryId }'/>">Xoa</a>
+            <a href="<c:url value='/admin/video/edit?videoId=${video.videoId }'/>">Sua</a>
+            <a href="<c:url value='/admin/video/delete?videoId=${video.videoId }'/>">Xoa</a>
             </td>
         </tr>
     </c:forEach>
